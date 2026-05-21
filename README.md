@@ -40,49 +40,49 @@ Por isso, não utilize dados sensíveis e críticos nessa distribuição, para s
 
 ## Preparando o pendrive completo
 
-### 1. Baixe a última versão da imagem disponível
+- 1. Baixe a última versão da imagem disponível: [live-gustosx-pendrive-052026.img](https://link.com)
 
-- [live-gustosx-pendrive-052026.img](https://link.com)
+- 2. Inicie o seu programa gravador de USB, selecione a imagem e grave no pendrive
 
-### 2. Inicie o seu programa gravador de USB, selecione a imagem e grave no pendrive
+- 3. Reinicie a máquina e faça boot pelo pendrive
 
-### 3. Reinicie a máquina e faça boot pelo pendrive
+- 4. Escolha a ISO do gustosx e pressione ENTER
 
-### 4. Escolha a ISO do gustosx e pressione ENTER
+- 5. Escolha boot menu e pressione ENTER
 
-### 5. Escolha boot menu e pressione ENTER
-
-### 6. Aguarde alguns bons momentos e ao final irá surgir a tela do CBIOs do emulador OpenMSX
+- 6. Aguarde alguns bons momentos e ao final irá surgir a tela do CBIOs do emulador OpenMSX
 
 ---
 
 
 ## Estrutura do pendrive
 
-
+```
 partições
 |-- Partição 1 - imagens ISO da distro
 |-- Partição 2 - EFI
 |-- Partição 3 - GUSTOSX - Persistência dos dados do usuário
+```
 
-### Imagens ISO da distro
+### Partição 1 - Imagens ISO da distro
 
 - Aqui contém a ISO mais recente da distro. Novas atualizações da distro basta somente apagar a ISO anterior dessa pasta e baixar a nova, simples assim, sem precisar reescrever todo o pendrive e perder seus dados.
 
-### EFI
+### Partição 2 - EFI
 
 - Utilizado pelo [Ventoy](https://www.ventoy.net) - Não mexer
 
-### GUSTOSX
+### Partição 3 - GUSTOSX
 
 - Partição FAT32 para peristência de dados do usuário que tem essa estrutura:
-
+```
 /
 |-- hd.dsk
 |-- extensions/
 |-- systemroms/
 |-- msxhd/
 
+```
 ### Arquivo hd.dsk
 
 - É um arquivo que corresponde a imagem FAT16 de um HD gerado pelo Nextor. Ele não é compatível com o Disk Manipulator do OpenMSX! 
@@ -110,17 +110,17 @@ partições
 
 # Experimentando o sabor MSX
 
-## Ao iniciar a imagem pela primera vez, o emulador é inicializado com a CBIOS padrão do OpenMSX. Ele permite rodar jogos de MSX1 e MSX2, mas não tem o BASIC embutido.
+- Ao iniciar a imagem pela primera vez, o emulador é inicializado com a CBIOS padrão do OpenMSX. Ele permite rodar jogos de MSX1 e MSX2, mas não tem o BASIC embutido.
 
-## INFELIZMENTE, devido a motivos óbvios, o projeto não contém nenhuma ROM proprietária, seja de jogo ou de máquina. Tem somente os perfis e setups pronto para serem acionados quando as ROMs forem encontradas. Veja a sessão [Temperando o sabor MSX](#Temperando o sabor MSX).
+- INFELIZMENTE, devido a motivos óbvios, o projeto não contém nenhuma ROM proprietária, seja de jogo ou de máquina. Tem somente os perfis e setups pronto para serem acionados quando as ROMs forem encontradas. Veja a sessão [Temperando o sabor MSX](#Temperando o sabor MSX).
 
-## O core da live roda na memória RAM, mas a persistência dos dados criados e modificados no MSX virtual são gravados no pendrive na partição entitulada "GUSTOSX". Veja a sessão [Estrutura do pendrive](#Estrutura do pendrive)
+- O core da live roda na memória RAM, mas a persistência dos dados criados e modificados no MSX virtual são gravados no pendrive na partição entitulada "GUSTOSX". Veja a sessão [Estrutura do pendrive](#Estrutura do pendrive)
 
-## Encerrando o emulador com ALT+F4, o sistema é desligado, inclusive a máquina.
+- Encerrando o emulador com ALT+F4, o sistema é desligado, inclusive a máquina.
 
-## Ainda náo é possível criar scripts de inicialização do OpenMSX com parâmetros personalizados. O projeto tem como foco as máquinas brasileiras MSX Expert Gradiente, Sharp Hotbit e MSX3 criado por Carchano.
+- Ainda náo é possível criar scripts de inicialização do OpenMSX com parâmetros personalizados. O projeto tem como foco as máquinas brasileiras MSX Expert Gradiente, Sharp Hotbit e MSX3 criado por Carchano.
 
-## Disquetes físicos ainda não são suportados, somente DSKs e Dir as Disk. Já teve pesquisa e questionamentos sobre isso. Nas minhas pesquisas a limitação está no core do OpenMSX, que pela filosofia de ser Agnóstico em sua plataforma, não se atrela a leitura de nenhum dispositivo físico. Talvez uma implementação futura permita isso.
+- Disquetes físicos ainda não são suportados, somente DSKs e Dir as Disk. Já teve pesquisa e questionamentos sobre isso. Nas minhas pesquisas a limitação está no core do OpenMSX, que pela filosofia de ser Agnóstico em sua plataforma, não se atrela a leitura de nenhum dispositivo físico. Talvez uma implementação futura permita isso.
 
 
 ---
@@ -131,39 +131,40 @@ partições
 
 ### 1. O projeto não tem nenhuma ROM de máquina, então você precisará localizar e baixar as seguintes ROMS de máquina para ativar os recursos principais da distro:
 
-    - Expert Gradiente XP800 (obrigatório no primeiro uso)
-    - Hotbit Sharp HB-8000 (opcional)
-    - DDX 3.0 (obrigatório no primeiro uso)
-    - Nextor (obrigatório para o suporte a HD e no primeiro uso)
+- Expert Gradiente XP800 (obrigatório no primeiro uso)
+- Hotbit Sharp HB-8000 (opcional)
+- DDX 3.0 (obrigatório no primeiro uso)
+- Nextor (obrigatório para o suporte a HD e no primeiro uso)
 
 ### 2. Você pode encontrar referências nesses sites indicados:
 
-    - [Nextor](https://github.com/Konamiman/Nextor/releases)
-    - [Hardware e software relacionado a MSX](https://www.msxpro.com)
-    - [Jogos MSX](https://www.file-hunter.com)
+- [Nextor](https://github.com/Konamiman/Nextor/releases)
+- [Hardware e software relacionado a MSX](https://www.msxpro.com)
+- [Jogos MSX](https://www.file-hunter.com)
 
 ---
 
 ## Adicionando ROMS e programas
 
-### 1. Baixe as ROMs do item 1 necessárias e coloque elas dentro da pasta **systemroms** do volume GUSTOSX. NÃO COLOQUE AS ROMS DE JOGOS NESTA PASTA!
+- 1. Baixe as ROMs do item 1 necessárias e coloque elas dentro da pasta **systemroms** do volume GUSTOSX. NÃO COLOQUE AS ROMS DE JOGOS NESTA PASTA!
 
-### 2. Crie uma pasta chamada GAMES dentro pasta **msxhd** e nesta pasta coloque as ROMs que baixar. É essa pasta que o SofaRun irá procurar no início da distro.
+- 2. Crie uma pasta chamada GAMES dentro pasta **msxhd** e nesta pasta coloque as ROMs que baixar. É essa pasta que o SofaRun irá procurar no início da distro.
 
-### 3. Retire o pendrive e ligue no computador. Inicie a distro. Se estiver com as ROMs corretas, será iniciado o emulador com um programa em basic chamado AVISO DE SISTEMA, que copiará TODOS os arquivos que estiverem na pasta **msxhd** para o hd virtual **hd.dsk**.
+- 3. Retire o pendrive e ligue no computador. Inicie a distro. Se estiver com as ROMs corretas, será iniciado o emulador com um programa em basic chamado AVISO DE SISTEMA, que copiará TODOS os arquivos que estiverem na pasta **msxhd** para o hd virtual **hd.dsk**.
 
 ---
 
 ## Adicionando DSKs
 
-### 1. DSKs que formem baixados devem ou ficar na pasta raiz do volume GUSTOSX ou em um nível de pasta, exemplo de estrutura:
-
+- 1. DSKs que formem baixados devem ou ficar na pasta raiz do volume GUSTOSX ou em um nível de pasta, exemplo de estrutura:
+```
 /
 |-- amazonia.dsk
 |-- Aleste 2/
    |-- aleste2-disk1.dsk
    |-- aleste2-disk2.dsk
 ...
+```
 
 ---
 
@@ -177,7 +178,7 @@ partições
 
 - A leitura de pastas e arquivos é feita em **ordem alfábetica e numérica**
 
-- **O RECURSO NÃO FUNCIONA NO PERFIL CBIOS PADRÃO **
+- **O RECURSO NÃO FUNCIONA NO PERFIL CBIOS PADRÃO**
 
 ## Atalhos para movimentar o cursor nas pastas
 
@@ -221,7 +222,7 @@ partições
 - Para que funcione é necessário que as ROMs das máquinas estejam disponíveis na pasta **systemroms** do volume GUSTOSX
 
 
-### Trocando a máquina (caso esteja usando o HD virtual)
+## CHMSX.BAS - Trocando a máquina (caso esteja usando o HD virtual)
 
 - No MSX-DOS vá para a raiz do HD - ```CD C:\```
 - Entre na pasta BASIC - ```CD BASIC```
@@ -231,7 +232,7 @@ partições
 - Escolha uma das opções e aguarde o reinício do emulador.
 - Se não escolheu nenhuma das opções, basta digitar ```CALL SYSTEM``` e voltar a MSX-DOS
 
-### Trocando a máquina (caso esteja no BASIC e disquete virtual)
+## CHMSX.BAS - Trocando a máquina (caso esteja no BASIC e disquete virtual)
 
 - Pressione CTRL+SHIFT+DOWN para ejetar qualquer disco inserido
 - Pressione CTRL+SHIFT+UP para inserir o disco de sistema
@@ -245,17 +246,17 @@ partições
 
 # Limitações em Netbooks antigos
 
-## Processadores Atom/Celerom costumam a ter desempenho ruim mesmo com sistemas otimizados, então o tempo de boot pode variar de 30s a até 2 minutos, ou travar. Infelizmente não teve muito o que fazer nesse sentido, pois vários pacotes e módulos foram retirados do kernel, mas cheguei a um limite para tentar reduzir o tempo de inicialização.
+- Processadores Atom/Celerom costumam a ter desempenho ruim mesmo com sistemas otimizados, então o tempo de boot pode variar de 30s a até 2 minutos, ou travar. Infelizmente não teve muito o que fazer nesse sentido, pois vários pacotes e módulos foram retirados do kernel, mas cheguei a um limite para tentar reduzir o tempo de inicialização.
 
-## Nos meus testes, em alguns momentos, o boot trava devido a conflito com o gerenciamento de energia. Não é sempre, mas depende do modelo do Netbook em si. Somente com testes adicionais para saber.
+- Nos meus testes, em alguns momentos, o boot trava devido a conflito com o gerenciamento de energia. Não é sempre, mas depende do modelo do Netbook em si. Somente com testes adicionais para saber.
 
-## Máquinas Dual Core, Core2Duo, que já são antigas também, o boot ficou mais rápido e não tive dor de cabeça no uso da imagem. Os jogos fluiram muito bem, assim como a movimentação de DSKs pelo recurso que simula uma gotek.
+- Máquinas Dual Core, Core2Duo, que já são antigas também, o boot ficou mais rápido e não tive dor de cabeça no uso da imagem. Os jogos fluiram muito bem, assim como a movimentação de DSKs pelo recurso que simula uma gotek.
 
-## Processadores Atom/Celerom antigos podem engargalar em alguns jogos de MSX2 ou MSX1, pela experiência de uso.
+- Processadores Atom/Celerom antigos podem engargalar em alguns jogos de MSX2 ou MSX1, pela experiência de uso.
 
-## Faça um teste, qualquer coisa, notifique-me sobre o modelo que está utilizando, assim podemos manter uma lista de modelo e compatibilidade da imagem. :)
+- Faça um teste, qualquer coisa, notifique-me sobre o modelo que está utilizando, assim podemos manter uma lista de modelo e compatibilidade da imagem. :)
 
-## O modo de hibernação pode não funcionar corretamente em alguns modelos de Netbook mais antigos, fazendo o sistema travar e ficar em tela escura. Nesse caso, desligue e ligue novamente o computador.
+- O modo de hibernação pode não funcionar corretamente em alguns modelos de Netbook mais antigos, fazendo o sistema travar e ficar em tela escura. Nesse caso, desligue e ligue novamente o computador.
 
 
 ---
@@ -286,68 +287,92 @@ partições
 
 ## Building:
 
-### 1. Instale os pacotes necessários:
+- 1. Instale os pacotes necessários:
 
-```sudo apt update
-   sudo apt install build-essential git live-build gcc g++ make cmake```
-
-### 2. Clone este repositório
-
-```git clone https://github.com/CleversonSA/gustosx live-gustosx```
-
-### 3. Compile. Dependendo de onde estiver fazendo o build, irá demorar em torno de 2h (sério)
-
-```cd live-gustosx
-   sudo build dev```
-
-### 4. Se tudo estiver OK, um arquivo ISO será gerado:
-
-```cd dist
-   ls
+```
+sudo apt update
+   
+sudo apt install build-essential git live-build gcc g++ make cmake
 ```
 
-### 5. Copie a ISO gerada para a pasta principal do Ventoy para testar.
+- 2. Clone este repositório
+
+```
+git clone https://github.com/CleversonSA/gustosx live-gustosx
+```
+
+- 3. Compile. Dependendo de onde estiver fazendo o build, irá demorar em torno de 2h (sério)
+
+```
+cd live-gustosx
+   sudo build dev
+```
+
+- 4. Se tudo estiver OK, um arquivo ISO será gerado:
+
+```
+cd dist
+   
+ls
+```
+
+- 5. Copie a ISO gerada para a pasta principal do Ventoy para testar.
 
 
 ---
 
 ## Pegadinha do BUILD! *ATENÇÃO**
 
-### 1. Mesmo sendo uma versão 32 bits, o kernel costuma a mudar a versão minor, aí, após 2h de compilação você pode se deparar com um erro frustante do GRUB (e que me fez passar raiva várias vezes). Parece que a cada duas semanas muda, eu já peguei caso que mudou de uma semana para outra e só descobri depois de perder umas boas horas
+- 1. Mesmo sendo uma versão 32 bits, o kernel costuma a mudar a versão minor, aí, após 2h de compilação você pode se deparar com um erro frustante do GRUB (e que me fez passar raiva várias vezes). Parece que a cada duas semanas muda, eu já peguei caso que mudou de uma semana para outra e só descobri depois de perder umas boas horas
 
-### 2. Verifique qual a última minor dos seguintes arquivos:
+- 2. Verifique qual a última minor dos seguintes arquivos:
 
-- ```vmlinuz-6.1.0-*
-     initrd.img-6.1.0-*-686-pae```
+```
+vmlinuz-6.1.0-*
+initrd.img-6.1.0-*-686-pae
+```
 
-### 3. Altere o arquivo ```config/includes.binary/boot/grub/grub.cfg```
+- 3. Altere o arquivo ```config/includes.binary/boot/grub/grub.cfg```
 
-### 4. Refaça o procedimento de build
+- 4. Refaça o procedimento de build
   
 ---
 
 # Detalhes do Linux
 
-## Caso precise acessar o terminal pressione CTRL+F3
+- Caso precise acessar o terminal pressione CTRL+F3
 
-## As credenciais padrões da imagem são usuário **gustosx** e senha **gustosx**
+- As credenciais padrões da imagem são usuário **gustosx** e senha **gustosx**
 
 ---
 
 # Licença
 
-## Esse projeto é distribuído sob a licença GNU GPLv2.
+- Esse projeto é distribuído sob a licença GNU GPLv2.
 
-```This program is free software; you can redistribute it and/or
+```
+This program is free software; you can redistribute it and/or
 modify it under the terms os the GNU General Public License
 version 2 as published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.```
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
-### Use por sua conta em risco, faça sempre backup de seus dados e não utilize/armazene/distribua informações sigilosas ou sensíveis nesta distribuição.
+- Use por sua conta em risco, faça sempre backup de seus dados e não utilize/armazene/distribua informações sigilosas ou sensíveis nesta distribuição.
 
 ---
 
-Divirtam-se *fudebas*!
+# Considerações finais
+
+Divirtam-se **fudebas**!
+
+---
+
+# CHANGELOG
+
+## [0.6.2] - 05/2026
+
+- Primeira versão distribuível
+
