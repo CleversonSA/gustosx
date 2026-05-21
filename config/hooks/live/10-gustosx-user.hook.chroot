@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if ! id gustosx >/dev/null 2>&1; then
+  useradd -m -s /bin/bash gustosx
+fi
+
+echo "gustosx:gustosx" | chpasswd
+
+usermod -aG sudo,audio,video,plugdev,netdev,floppy,dialout,cdrom gustosx || true
+
+cp -a /etc/skel/. /home/gustosx/
+chown -R gustosx:gustosx /home/gustosx
+chown -R gustosx:gustosx /opt/uosxpi

@@ -1,0 +1,14 @@
+[Unit]
+Description=Wayfire Wayland Compositor
+After=rc-local.service
+
+[Service]
+User=root
+Type=oneshot
+#ExecStart=su - umsxpi -c "WLR_LIBINPUT_NO_DEVICES=1 /usr/bin/wayfire -c /home/umsxpi/.config/wayfire.ini"
+ExecStart=su - umsxpi -c "/home/umsxpi/umsxpi-bios/wayfire-startup.sh"
+Restart=no
+Environment=XDG_RUNTIME_DIR=/var/run/user/1000
+
+[Install]
+WantedBy=multi-user.target

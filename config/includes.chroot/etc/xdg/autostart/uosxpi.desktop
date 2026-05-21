@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Uosxpi
+Comment=Yet another MSX emulator based on openMSX 21
+Exec=/usr/local/bin/uosxpi.sh
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true
+Terminal=false

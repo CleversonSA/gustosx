@@ -1,0 +1,7 @@
+#!/bin/sh
+
+plymouth-set-default-theme uosxpi
+
+if [ -x /usr/sbin/update-initramfs ]; then
+  update-initramfs -u
+fi

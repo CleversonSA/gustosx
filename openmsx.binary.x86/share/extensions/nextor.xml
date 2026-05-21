@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!DOCTYPE msxconfig SYSTEM 'msxconfig2.dtd'>
+<msxconfig>
+  <info>
+    <name>Nextor</name>
+    <manufacturer>Nextor</manufacturer>
+    <code/>
+    <release_year>1995</release_year>
+    <description>Nextor</description>
+    <type>external hard disk</type>
+  </info>
+  <devices>
+    <primary slot="any">
+      <secondary slot="any">
+        <SunriseIDE id="Sunrise IDE">
+          <mem base="0x0000" size="0x10000"/>
+          <rom>
+            <filename>nextor.rom</filename>
+            <sha1>97094d5ed206088c8f455801b7609e614c243562</sha1>
+            </rom>
+          <master>
+            <type>IDEHD</type>
+	    <filename>~/MSX/hd.dsk</filename>
+            <size>1024</size>
+          </master>
+          <slave>
+            <type>IDECDROM</type>
+          </slave>
+        </SunriseIDE>
+      </secondary>
+    </primary>
+  </devices>
+</msxconfig>

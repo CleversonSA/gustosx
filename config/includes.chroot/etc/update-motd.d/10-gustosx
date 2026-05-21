@@ -1,0 +1,31 @@
+#!/bin/bash
+cat <<'EOF'
+*******************************************************************************
+			gustoSX Live - 32bits
+*******************************************************************************
+Greetings! Thanks for use this custom openMSX based linux applaince aimed to
+give new life for old computers like netbooks, 2000's laptops, but compatible 
+with new laptops/desktops just for retrocomputing.
+
+The project goal is to give the most possible accurate MSX's computers usage
+using "modern" hardware. The scope of this project is use most famous brazilian
+MSX hardwares:
+
+- MSX Expert
+- HotBit
+- MSX Expert 3 (MSX2 brazilian project)
+
+For your own safety and risk concern, always remember:
+- This is a just for fun distro. Do not use it for sensitive personal data 
+  and tasks
+- Always makes a backup of your data
+
+WARNING:
+This system is provided "AS IS", without warranties of any kind, express or implied
+The author shall not be liable for data loss, hardware damage, instability, or
+unexpected behaviour. Use at your own risk.
+
+Enjoy, fudebas!
+
+EOF
+

@@ -1,0 +1,51 @@
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+bg_image = Image("background.png");
+bg_sprite = Sprite(bg_image);
+
+bg_sprite.SetX((screen_width - bg_image.GetWidth())/2);
+bg_sprite.SetY((screen_height - bg_image.GetHeight())/2);
+bg_sprite.SetZ(-100);
+
+dot1 = Sprite();
+dot2 = Sprite();
+dot3 = Sprite();
+
+dot_image = Image.Text("*", 1,1,1);
+dot1.SetImage(dot_image);
+dot2.SetImage(dot_image);
+dot3.SetImage(dot_image);
+
+center_x = screen_width / 2;
+center_y = screen_height * 0.72;
+
+dot1.SetX(center_x - 30);
+dot2.SetX(center_x);
+dot3.SetX(center_x + 30);
+
+dot1.SetY(center_y);
+dot2.SetY(center_y);
+dot3.SetY(center_y);
+
+dot1.SetZ(100);
+dot2.SetZ(100);
+dot3.SetZ(100);
+
+fun refresh_callback() {
+  time = Plymouth.GetTime();
+
+  phase = Math.Int(time * 3) % 3;
+
+  dot1.SetOpacity(0.25);
+  dot2.SetOpacity(0.25);
+  dot3.SetOpacity(0.25);
+
+  if (phase == 0) dot1.SetOpacity(1);
+  if (phase == 1) dot2.SetOpacity(1);
+  if (phase == 2) dot3.SetOpacity(1);
+
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);
+

@@ -1,0 +1,14 @@
+live-boot
+live-config
+systemd-sysv
+
+xorg
+xfce4
+xfce4-terminal
+
+lightdm
+lightdm-gtk-greeter
+
+sudo
+nano
+vim

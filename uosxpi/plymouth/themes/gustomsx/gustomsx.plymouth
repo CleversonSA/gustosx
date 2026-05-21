@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=gustomsx
+Description=Tema para o GustoMSX
+ModuleName=script
+
+[script]
+ImageDir=/home/gustomsx/Projetos/uosxpi/plymouth/themes/gustomsx
+ScriptFile=/home/gustomsx/Projetos/uosxpi/plymouth/themes/gustomsx.script

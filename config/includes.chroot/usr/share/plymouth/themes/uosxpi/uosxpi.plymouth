@@ -1,0 +1,9 @@
+[Plymouth Theme]
+Name=UOSXPI
+Description=Basic UOSXPI theme
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/uosxpi
+ScriptFile=/usr/share/plymouth/themes/uosxpi/uosxpi.script
+

@@ -1,0 +1,6 @@
+proc            /proc           proc    defaults          0       0
+#/dev/sda	/mnt/storage2	auto	defaults,uid=1000,gid=1000,umask=0022,nofail,sync,x-systemd.device-timeout=2s	0	2
+LABEL=GUSTOSX	/mnt/storage1	vfat	defaults,uid=1000,gid=1000,umask=0022,nofail,sync,x-systemd.device-timeout=2s		0	2
+/opt/uosxpi/hd/hd.dsk /mnt/msxhd  auto    loop,uid=1000,gid=1000,umask=0022,nofail,noauto,x-systemd.device-timeout=2s	0	2
+overlay / overlay rw 0 0
+tmpfs /tmp tmpfs nosuid,nodev 0 0

@@ -1,0 +1,9 @@
+auto
+binary
+.build
+cache
+chroot
+dist
+config/includes.chroot/opt/*
+config/includes.chroot/usr/local/lib/*
+msx/*

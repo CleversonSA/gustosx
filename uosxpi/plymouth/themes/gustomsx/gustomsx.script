@@ -1,0 +1,9 @@
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+image = Image("blue.png")
+sprite = Sprite(image);
+
+sprite.SetX((screen_width - image.getWidth())/2);
+sprite.SetY((screen_height - image.getHeight())/2);
+
