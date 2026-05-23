@@ -116,3 +116,6 @@ export PATH=${PATH}:/opt/openMSX/bin
 export UOSXPI_DIR=/opt/uosxpi
 export LD_LIBRARY_PATH=/usr/local/lib
 export PATH=${PATH}:/opt/openMSX/bin
+export UOSXPI_DIR=/opt/uosxpi
+export LD_LIBRARY_PATH=/usr/local/lib
+export PATH=${PATH}:/opt/openMSX/bin

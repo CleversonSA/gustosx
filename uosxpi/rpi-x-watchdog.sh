@@ -41,7 +41,18 @@ do
 	# DELETE OLD TEMP FILES
 	# =====================================================
 	sudo rm -f /tmp/openmsx-${USER}/*
-        
+ 	
+	# =====================================================
+	# COPY PROFILE MACHINES TO STORAGE IF AVAILABLE
+	# =====================================================
+	get_external_storage
+	EXISTING_MACHINE_PROFILES=$(find "${STORAGE_DIR}/.gustosx/openmsx-profiles" -maxdepth 1 -iname "*.sh")	
+	if [ "${EXISTING_MACHINE_PROFILES}" == "" ]; then
+	   sudo mkdir -p ${STORAGE_DIR}/.gustosx/openmsx-profiles
+	fi
+	sudo cp ${UOSXPI_DIR}/openmsx-profiles/*.sh ${STORAGE_DIR}/.gustosx/openmsx-profiles/
+	
+       
 	# =====================================================
 	# SHUTDOWN SYSTEM
 	# =====================================================

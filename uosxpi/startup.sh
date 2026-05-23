@@ -65,6 +65,13 @@ if [ ! "${EXISTING_ROM_FILES}" == "" ]; then
     echo "copiado"
 fi
     
+# =====================================================
+# CHECK FOR PROFILE MACHINES TO COPY
+# =====================================================
+EXISTING_MACHINE_PROFILES=$(find "${STORAGE_DIR}/.gustosx/openmsx-profiles" -maxdepth 1 -iname "*.sh")	
+if [ ! "${EXISTING_MACHINE_PROFILES}" == "" ]; then
+   sudo cp ${STORAGE_DIR}/.gustosx/openmsx-profiles/*.sh ${UOSXPI_DIR}/openmsx-profiles
+fi
 
 
 # =====================================================
