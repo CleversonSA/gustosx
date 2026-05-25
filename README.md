@@ -105,6 +105,18 @@ partições
 ### msxhd
 
 - Aqui são os arquivos que serão transferidos para o HD virtual ao iniciar o emulador.
+- Uma sugestão para melhor organização no HD e dentro do SofaRun é:
+
+```
+/msxhd/
+|-- GAMES
+   |-- A-H/
+   |-- I-O/
+   |-- P-R/
+   |-- S-Z
+```
+
+E dentro de cada pasta colocar a ROM desejada separada pela inicial.
 
 ---
 
