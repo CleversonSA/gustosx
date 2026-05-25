@@ -40,7 +40,7 @@ Por isso, não utilize dados sensíveis e críticos nessa distribuição, para s
 
 ## Preparando o pendrive completo
 
-- 1. Baixe a última versão da imagem disponível: [live-gustosx-pendrive-052026.img](https://drive.google.com/file/d/15zsoV19FBMKjwRkl9eAMr4HJsXWd1rMk/view?usp=sharing)
+- 1. Baixe a última versão da imagem disponível: [live-gustosx-pendrive-052026.img](https://drive.google.com/file/d/1-pYJ5grBfbdWLAesO51pAhxDK8NwOCv8/view?usp=drive_link)
 
 - 2. Inicie o seu programa gravador de USB, selecione a imagem e grave no pendrive
 
