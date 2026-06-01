@@ -273,6 +273,19 @@ E dentro de cada pasta colocar a ROM desejada separada pela inicial.
 
 ---
 
+# Hardware testados
+
+- Aqui uma lista de dispositivos reais onde a imagem foi testada, conforme o feedback da comunidade essa lista vai sendo atualizada:
+
+| Fabricante | Modelo     | Processador | Memória (GB) | Classificação | Experiência de uso |
+|--------|----------|----------|----------|----------|----------|
+| Positivo | Mobile S7 | Atom 32bits | 2GB | * * * - - | A imagem dá boot, por vezes dá um conflito com o ACPI que trava o início do linux, precisando reiniciar a máquina. Funciona bem, desempenho mediano. Jogos em MSX2+ podem apresentar lentidão. Mudança de DSKs exigirá um pouco de paciência |
+| Dell | Inspiron 1440 | Intel Quadcore 64 bits | 4GB | * * * * * | Boot rápido, desempenho excelente |
+| Acer | Aspire One ZG5 | Atom 32bits | 2GB | * * * * - | Boot OK, uso sem maiores problemas |
+| CCE | Win WM52C | Intel Centrino 32bits | 1GB | - - - - - | Não iniciou o Ventoy, talvez por não suportar EFI |
+
+---
+
 # Instalando em um HD a live
 
 - Já coloquei esse tópico antes que surjam perguntas. Até o momento *NÃO HÁ INSTALADOR* para a live, pelo motivo de que ela ainda não está madura e não foi testada em mais dispositivos.
