@@ -2,7 +2,7 @@ d binary
 f binary/md5sum.README
 f binary/md5sum.txt
 d binary/live
-f binary/live/initrd.img-6.1.0-48-686-pae
+f binary/live/initrd.img-6.1.0-53-686-pae
 f binary/live/filesystem.packages
 f binary/live/filesystem.squashfs
 f binary/sha256sum.README
