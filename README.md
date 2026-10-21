@@ -68,6 +68,14 @@ partições
 
 - Aqui contém a ISO mais recente da distro. Novas atualizações da distro basta somente apagar a ISO anterior dessa pasta e baixar a nova, simples assim, sem precisar reescrever todo o pendrive e perder seus dados.
 
+- Abaixo as opções de ISO disponíveis com novas atualizações, sem necessitar de remontar todo o pendrive:
+
+|Nome do arquivo|Versão|Plataforma|Data de lançamento|Link|
+|---------------|------|----------|----|----|
+|gustosx-live-0.7.0.iso|0.7.0|32 bits|21/10/2026|[Baixar](https://github.com/CleversonSA/gustosx/blob/main/dist/gustosx-live-0.7.0.iso)
+|gustosx-live-0.6.4.iso|0.6.4|32 bits|07/10/2026|[Baixar](https://github.com/CleversonSA/gustosx/blob/main/dist/gustosx-live-0.6.4.iso)|
+
+
 ### Partição 2 - EFI
 
 - Utilizado pelo [Ventoy](https://www.ventoy.net) - Não mexer
@@ -177,6 +185,20 @@ E dentro de cada pasta colocar a ROM desejada separada pela inicial.
    |-- aleste2-disk2.dsk
 ...
 ```
+---
+# Instalando o GustoSX na máquina em definitivo.
+
+A partir da versão 0.7.0 da ISO é possível instalar o appliance GustoSX e "saborizar" definitivamente a máquina com um MSX funcional emulado, sem a necessidade de usar o pendrive toda vez. 
+
+O ganho passa por melhoria de performance, visto que o protocolo USB costuma a ter uma certa latência em relação a SSDs e HDs, e também para simplificar coisas.
+
+**AVISO**
+
+A instalação não irá destruir ou remover o sistema operacional, ao menos que você escolha essa opção na hora de instalar. Como é uma distro para diversão, por favor, lembre-se:
+
+- **Recomendo backup da unidade destino**
+- **Não recomendo a instalação da distro em sua máquina de produção ou que contenha dados sensíveis! Não vá usar sua máquina que acessa o banco ou Imposto de Renda! Sério!**
+- **Faça por sua conta em RISCO!**
 
 ---
 
@@ -283,6 +305,8 @@ E dentro de cada pasta colocar a ROM desejada separada pela inicial.
 | Dell | Inspiron 1440 | Intel Quadcore 64 bits | 4GB | * * * * * | Boot rápido, desempenho excelente |
 | Acer | Aspire One ZG5 | Atom 32bits | 2GB | * * * * - | Boot OK, uso sem maiores problemas |
 | CCE | Win WM52C | Intel Centrino 32bits | 1GB | - - - - - | Não iniciou o Ventoy, talvez por não suportar EFI |
+| (desconhecido) | Intel | Intel i5 9a geração + GPU NVidia | 16GB | ***** | No boot normal travou, mas ao escolher a opção Safe Grafics, no menu de inicialização, funcionou corretamente. É um problema da plataforma 32bits com processadores modernos e GPU moderna, normalmente dá problema com o driver neauveau e i915. Somente uma versão 64bits futura corrige o problema. Lembrando, que a opção de menu está a partir da ISO 0.6.4 |
+| AMD | Ryzen | Ryzen 5 7600 + GPU Radeon | 16GB | - - - - - | Não bootou, incompatibilidade com 32bits, até mesmo o ventoy. Vai precisar de uma versão 64bits |
 
 ---
 
@@ -396,6 +420,10 @@ Divirtam-se **fudebas**!
 ---
 
 # CHANGELOG
+
+## [0.6.4] - 10/2026
+- Adição de opções no menu no GRUB, antes escondido, para escolher a opção que ignora os drivers incompatíveis de aceleração gráfica em computadores modernos.
+- Adição do nomodeset como modo de compatibilidade, após comentário de inscrito que não conseguiu carregar o GustoSX em computadores com i5...eu também não consegui. 
 
 ## [0.6.2] - 05/2026
 
