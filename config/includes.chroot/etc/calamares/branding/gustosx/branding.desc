@@ -1,0 +1,37 @@
+---
+componentName:   gustosx
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: noexpand
+windowSize: 800px,400px
+windowPlacement: center
+
+strings:
+    productName:         GustoSX x86
+    shortProductName:    GustoSX
+    version:             0.7 (komenci)
+    shortVersion:        0.7
+    versionedName:       GustoSX 0.7 (komenci)
+    shortVersionedName:  GustoSX 0.7
+    bootloaderEntryName: GustoSX
+    productUrl:          https://github.com/CleversonSA/gustosx
+    supportUrl:          https://github.com/CleversonSA/gustosx
+    knownIssuesUrl:      https://github.com/CleversonSA/gustosx
+    releaseNotesUrl:     https://github.com/CleversonSA/gustosx
+    donateUrl:           https://github.com/CleversonSA/gustosx
+
+images:
+    productLogo:         "gustosx-logo.png"
+    productIcon:         "gustosx-logo.png"
+    productWelcome:      "gustosx-welcome.png"
+    # productWallpaper:  "wallpaper.png"
+
+slideshow:               "show.qml"
+
+style:
+   sidebarBackground:    "#000000"
+   sidebarText:          "#FFFFFF"
+   sidebarTextSelect:    "#000000"
+   sidebarTextHighLight: "#ffffff"
+
+slideshowAPI: 2

@@ -9,9 +9,6 @@
 # -------------------------------------------
 # GLOBAL VARIABLES
 # -------------------------------------------
-STORAGE1_DIR="/mnt/storage1"
-STORAGE2_DIR="/mnt/storage2"
-STORAGE_DIR=""
 INTERNAL_DSK=${UOSXPI_DIR}'/diskA'
 SOCKET_PATH="/tmp/openmsx-"${USER}
 OPENMSX_READ_MEM_CMD=`./openmsx-getstring.py --dir ${SOCKET_PATH}`

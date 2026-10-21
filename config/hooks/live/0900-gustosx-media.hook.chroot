@@ -1,0 +1,17 @@
+#! /bin/bash
+
+set -e
+
+echo "GustoSX auto media settings..."
+
+chmod 755 /opt/uosxpi/umsxpi-media.sh
+
+mkdir -p /mnt/storage1
+mkdir -p /mnt/storage2
+mkdir -p /mnt/storage3
+
+chmod 755 /mnt/storage1 /mnt/storage2 /mnt/storage3
+
+systemctl daemon-reload
+
+

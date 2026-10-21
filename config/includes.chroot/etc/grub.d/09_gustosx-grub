@@ -1,0 +1,76 @@
+#!/bin/sh
+set -e
+
+. /usr/share/grub/grub-mkconfig_lib
+
+# Localiza o kernel mais recente pela data de modificação
+KERNEL=$(find /boot -maxdepth 1 -type f \
+    -name 'vmlinuz-*' -printf '%T@ %p\n' |
+    sort -nr |
+    head -n 1 |
+    cut -d' ' -f2-)
+
+if [ -z "$KERNEL" ]; then
+    echo "GustoSX: kernel não encontrado" >&2
+    exit 1
+fi
+
+# Extrai a versão do kernel
+KERNEL_VERSION=${KERNEL##*/vmlinuz-}
+
+# Localiza o initrd correspondente
+INITRD="/boot/initrd.img-${KERNEL_VERSION}"
+
+if [ ! -f "$INITRD" ]; then
+    echo "GustoSX: initrd não encontrado para ${KERNEL_VERSION}" >&2
+    exit 1
+fi
+
+echo "GustoSX: kernel selecionado: $KERNEL" >&2
+echo "GustoSX: initrd selecionado: $INITRD" >&2
+
+
+# Identifica a partição raiz
+ROOT_DEVICE=$(grub-probe --target=device /)
+ROOT_UUID=$(grub-probe --device "$ROOT_DEVICE" --target=fs_uuid)
+ROOT_FS=$(grub-probe --device "$ROOT_DEVICE" --target=fs)
+
+# Caminhos interpretados pelo GRUB
+GRUB_KERNEL=$(make_system_path_relative_to_its_root "$KERNEL")
+GRUB_INITRD=$(make_system_path_relative_to_its_root "$INITRD")
+
+# Parâmetros de inicialização
+CMDLINE="${GRUB_CMDLINE_LINUX} ${GRUB_CMDLINE_LINUX_DEFAULT}"
+
+# Configuração comum para localizar a partição
+cat <<EOF
+insmod part_msdos
+insmod part_gpt
+insmod ${ROOT_FS}
+search --no-floppy --fs-uuid --set=root ${ROOT_UUID}
+EOF
+
+# Entrada principal
+cat <<EOF
+menuentry "GustoSX" {
+  linux ${GRUB_KERNEL} root=UUID=${ROOT_UUID} username=gustosx ${CMDLINE}
+  initrd ${GRUB_INITRD}
+}
+EOF
+
+# Submenu de opções avançadas
+cat <<EOF
+submenu 'GustoSX extra menu' {
+
+    menuentry "GustoSX Live (Safe Graphics - If does not booting)" {
+      linux ${GRUB_KERNEL} root=UUID=${ROOT_UUID} username=gustosx ${CMDLINE} nomodeset
+      initrd ${GRUB_INITRD}
+    }
+
+    menuentry "GustoSX Live (Debug)" {
+      linux ${GRUB_KERNEL} root=UUID=${ROOT_UUID} username=gustosx ${CMDLINE} systemd.unit=multi-user.target
+      initrd ${GRUB_INITRD}
+    }
+
+}
+EOF

@@ -1,0 +1,5 @@
+# Dispositivos USB com filesystem
+ACTION=="add", SUBSYSTEM=="block", SUBSYSTEMS=="usb", ENV{ID_FS_USAGE}=="filesystem", TAG+="systemd", ENV{SYSTEMD_WANTS}+="gustosx-media@%k.service"
+
+# Cartoes SD detectados pela interface MMC/SD
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="mmcblk*", ENV{ID_FS_USAGE}=="filesystem", TAG+="systemd", ENV{SYSTEMD_WANTS}+="gustosx-media@%k.service"

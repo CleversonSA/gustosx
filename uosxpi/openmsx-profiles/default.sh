@@ -1,5 +1,5 @@
 #! /bin/bash
-WAYLAND_DISPLAY=wayland-1 wlr-randr --output HDMI-A-1 --custom-mode 800x600@60Hz
+#WAYLAND_DISPLAY=wayland-1 wlr-randr --output HDMI-A-1 --custom-mode 800x600@60Hz
 
 openmsx \
   -command "set fullscreen on" \
@@ -12,8 +12,7 @@ openmsx \
   -exta Musical_Memory_Mapper \
   -extb slotexpander \
   -ext DDX_3.0 \
-  -ext nextor
-#  -diska ${UOSXPI_DIR}/diskA >${UOSXPI_DIR}/openmsx.stdout 2>${UOSXPI_DIR}/openmsx.stderr
+  -ext nextor >${UOSXPI_DIR}/openmsx.stdout 2>${UOSXPI_DIR}/openmsx.stderr
  
 
 exit 0
