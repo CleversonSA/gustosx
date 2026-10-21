@@ -197,8 +197,41 @@ O ganho passa por melhoria de performance, visto que o protocolo USB costuma a t
 A instalação não irá destruir ou remover o sistema operacional, ao menos que você escolha essa opção na hora de instalar. Como é uma distro para diversão, por favor, lembre-se:
 
 - **Recomendo backup da unidade destino**
-- **Não recomendo a instalação da distro em sua máquina de produção ou que contenha dados sensíveis! Não vá usar sua máquina que acessa o banco ou Imposto de Renda! Sério!**
+  
+- **Não recomendo a instalação da distro em sua máquina de produção ou que contenha dados sensíveis! Exemplo: não vá usar sua máquina que acessa o banco ou Imposto de Renda! Sério!**
+
 - **Faça por sua conta em RISCO!**
+
+## Requisitos para instalação
+
+- Recomendado 16GB (Mínimo 10GB) de armazenamento disponíveis (afinal de contas, por traz roda um linux mínimo), há um trabalho para reduzir o tamanho em versões futuras.
+
+- Caso a máquina tenha uma partição Windows, o instalador tem a capacidade de reduzir o tamanho dela para liberar espaço, mas recomendo fazer isso no Windows mesmo antes de iniciar a instalação.
+
+- Pendrive com a versão live ainda é necessário, pelo menos no processo de instalação e primeiro boot
+
+## Passos da instalação:
+
+- No menu de inicialização do GustoSX, escolha a opção **GustoSX Install**
+  
+- Aguarde a inicialização completa, em alguns netbooks pode demorar até 3min, se for baseado em SD.
+
+- Siga as orientações da tela do instalador, preenchendo os dados necessários a cada etapa
+
+- A instalação pode levar até 30min dependendo da máquina e se haverá redimensionamento de disco.
+
+- Ao completar a instalação, reinicie a máquina e **retire o pendrive**
+
+- Aguarde a inicialização automática do GustoSX, pode levar até 3min dependendo do computador.
+
+- Se tudo der certo, a tela do CBIOS aparecerá no monitor.
+
+- Se você preparou o pendrive do GustoSX com ROMs de máquinas(Expert, Hotbit e Expert3), e ROMS de jogos dentro de **msxhd**, conecte o pendrive e aguarde pelo menos 1 min (dependendo da máquina).
+
+- Se houver ROMs o processo de instalação e ativação do HD virtual do OpenMSX será executado.
+
+- Quando o Sofarun iniciar ao final do processo, pode remover,se quiser, o pendrive. Guarde-o para uso posterior, instalação em outra máquina ou até mesmo colocar novas ROMs e DSKs
+
 
 ---
 
@@ -308,17 +341,6 @@ A instalação não irá destruir ou remover o sistema operacional, ao menos que
 | (desconhecido) | Intel | Intel i5 9a geração + GPU NVidia | 16GB | ***** | No boot normal travou, mas ao escolher a opção Safe Grafics, no menu de inicialização, funcionou corretamente. É um problema da plataforma 32bits com processadores modernos e GPU moderna, normalmente dá problema com o driver neauveau e i915. Somente uma versão 64bits futura corrige o problema. Lembrando, que a opção de menu está a partir da ISO 0.6.4 |
 | AMD | Ryzen | Ryzen 5 7600 + GPU Radeon | 16GB | - - - - - | Não bootou, incompatibilidade com 32bits, até mesmo o ventoy. Vai precisar de uma versão 64bits |
 
----
-
-# Instalando em um HD a live
-
-- Já coloquei esse tópico antes que surjam perguntas. Até o momento *NÃO HÁ INSTALADOR* para a live, pelo motivo de que ela ainda não está madura e não foi testada em mais dispositivos.
-
-- Ainda que você copie o conteúdo do pendrive para um HD, poderá não ter a experiÊncia desejada, pois os scripts dependem do volume GUSTOSX para ler ROMs, persistÊncia, etc.
-
-- Nessa fase de ajustes, até a versão beta 1.0, não haverá instalador. Quando estiver mais estabilizado e testado, aí sim, podemos ativar a live para o modo de instalador. Por isso, peço compreensão.
-
-- Mesmo em modo live, novas ISOs com melhorias poderão ser colocadas na partição do ventoy, sem danificar o volume de persistência do usuário, com suas ROMs, HD, etc.
 
 ---
 
@@ -421,6 +443,14 @@ Divirtam-se **fudebas**!
 
 # CHANGELOG
 
+## [0.7.0] - 10/2026
+- Adição da feature de instalação na máquina, utilizando o instalador Calamares do Debian
+- Revisão e refactor do núcleo de inicialização do emulador
+- Revisão e refactor do gerenciamento de armazenamento externo USB
+- Revisão da forma de instalação de novas ROMs via pendrive
+- Testes de instalação e eventos em mais máquinas
+- Correções de detalhes de identificação de partições e appliance.
+  
 ## [0.6.4] - 10/2026
 - Adição de opções no menu no GRUB, antes escondido, para escolher a opção que ignora os drivers incompatíveis de aceleração gráfica em computadores modernos.
 - Adição do nomodeset como modo de compatibilidade, após comentário de inscrito que não conseguiu carregar o GustoSX em computadores com i5...eu também não consegui. 
