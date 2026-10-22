@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=openmsx
+Comment=Starts openMSX emulator
+Exec=/opt/uosxpi/startup.sh
+Terminal=false
+StartupNotify=false
+X-GNOME-Autostart-enabled=true

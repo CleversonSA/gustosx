@@ -1,0 +1,9 @@
+proc            /proc           proc    defaults          0       0
+PARTUUID=76fd40e8-01  /boot/firmware  vfat    defaults          0       2
+PARTUUID=76fd40e8-02  /               ext4    defaults,noatime  0       1
+#PARTUUID=76fd40e8-03  /umsxpi         vfat    rw,user,exec,umask=000          0       0
+/dev/sda	/mnt/storage2	auto	defaults,uid=1000,gid=1000,umask=0022,nofail,sync,x-systemd.device-timeout=2s	0	2
+/dev/sda1	/mnt/storage1	auto	defaults,uid=1000,gid=1000,umask=0022,nofail,sync,x-systemd.device-timeout=2s		0	2
+/home/umsxpi/hd.dsk /mnt/msxhd  auto    loop,offset=512,uid=1000,gid=1000,umask=0022,nofail,noauto,x-systemd.device-timeout=2s	0	2
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that

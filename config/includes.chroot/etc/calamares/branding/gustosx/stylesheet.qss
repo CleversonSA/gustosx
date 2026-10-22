@@ -1,0 +1,48 @@
+QWidget {
+  background-color: #2205f5;
+  color: #ffffff;
+}
+
+QPushButton {
+  background-color: #013773;
+  color: #ffffff;
+  border: 1px solid #596675;
+  padding: 5px 12px;
+}
+
+QPushButton:hover {
+  background-color: #0046bde;
+}
+
+QMainWindow {
+  background-color: #2205f5;
+}
+
+QStackedWidget {
+  background-color: #2205f5;
+}
+
+QLabel {
+  font-size: 15px;
+}
+
+QLabel {
+  font-size: 15px;
+}
+
+QPushButton {
+  font-size: 15px;
+}
+
+QLineEdit,
+QListView,
+QListWidget,
+QTreeView,
+QTreeWidget,
+QComboBox {
+  font-size: 15px;
+}
+
+#sidebarApp {
+  font-size: 15px;
+}

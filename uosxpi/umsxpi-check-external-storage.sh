@@ -10,32 +10,34 @@
 #=================================================
 
 SOCKET_PATH="/tmp/openmsx-"${USER}
-# Check for devices on monitored folders
-STORAGE1=`lsblk | grep /mnt/storage1`
-STORAGE2=`lsblk | grep /mnt/storage2`
 
-# Verify if the monitored folders are actually mountpoints
-# even unplugged
-MOUNTPOINT1=`mountpoint /mnt/storage1 | grep "is a mountpoint"`
-MOUNTPOINT2=`mountpoint /mnt/storage2 | grep "is a mountpoint"`
+# Pool de pontos de montagem
+STORAGES=(
+    "/mnt/storage1"
+    "/mnt/storage2"
+    "/mnt/storage3"
+)
 
-# So let's check if a mountpoint is actually mounted or
-# lost link
-if [[ "${STORAGE1}" == "" && "${MOUNTPOINT1}" != "" ]]; then
+for CANDIDATE_DIR in ${STORAGES[@]}; do
+
+	# Check for devices on monitored folders
+	STORAGE=`lsblk | grep ${CANDIDATE_DIR}`
+
+	# Verify if the monitored folders are actually mountpoints
+	# even unplugged
+	MOUNTPOINT=`mountpoint ${CANDIDATE_DIR} | grep "is a mountpoint"`
+
+	# So let's check if a mountpoint is actually mounted or
+	# lost link
+	if [[ "${STORAGE}" == "" && "${MOUNTPOINT}" != "" ]]; then
 	
-  echo "${MOUNTPOINT1} link was lost!"
-  ./openmsx-disk-umount.py --drive a --dir ${SOCKET_PATH}
-  sudo umount /mnt/storage1
+  		echo "${MOUNTPOINT} link was lost!"
+  		./openmsx-disk-umount.py --drive a --dir ${SOCKET_PATH}
+  		sudo umount ${CANDIDATE_DIR}
 
-fi
+	fi
 
-if [[ "${STORAGE2}" == "" && "${MOUNTPOINT2}" != "" ]]; then
-	
-  echo "${MOUNTPOINT2} link was lost!"
-  ./openmsx-disk-umount.py --drive a --dir ${SOCKET_PATH}
-  sudo umount /mnt/storage2
-
-fi
+done
 
 # Reinfoces refresh mount points
 sudo mount -a

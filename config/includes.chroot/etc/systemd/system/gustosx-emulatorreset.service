@@ -1,0 +1,6 @@
+[Unit]
+Description=GustoSX - Reinicio do emulador
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl restart gustosx-main.service

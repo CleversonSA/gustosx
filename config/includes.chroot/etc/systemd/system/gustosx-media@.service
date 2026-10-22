@@ -1,0 +1,11 @@
+[Unit]
+Description=GustoSX - Midia removivel %I
+BindsTo=dev-%i.device
+After=dev-%i.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/uosxpi/umsxpi-media.sh add %i
+ExecStopPost=/opt/uosxpi/umsxpi-media.sh remove %i
+TimeoutStartSec=120

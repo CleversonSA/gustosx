@@ -1,0 +1,7 @@
+[Unit]
+Description=Gusto SX - Aguardar todos o mounts para reiniciar o emulador
+
+[Timer]
+OnActiveSec=5s
+AccuracySec=100ms
+Unit=gustosx-emulatorreset.service

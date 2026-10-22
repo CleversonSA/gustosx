@@ -1,0 +1,14 @@
+[Unit]
+Description=GustoSX - Inicio do Emulador
+
+[Service]
+Type=simple
+User=gustosx
+Group=gustosx
+WorkingDirectory=/home/gustosx
+ExecStart=/bin/bash -ic 'DISPLAY=:0 /opt/uosxpi/startup.sh'
+KillMode=control-group
+TimeoutStopSec=10
+
+[Install]
+WantedBy=graphical.target

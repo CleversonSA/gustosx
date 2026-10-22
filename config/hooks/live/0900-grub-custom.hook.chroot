@@ -1,0 +1,7 @@
+#! /bin/sh
+set -e
+
+echo "GustoSX: configurando GRUB persinalizado"
+
+chmod 755 /etc/grub.d/09_gustosx-grub
+chmod 644 /etc/grub.d/10_linux
