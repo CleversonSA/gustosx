@@ -73,7 +73,6 @@ partições
 |Nome do arquivo|Versão|Plataforma|Data de lançamento|Link|
 |---------------|------|----------|----|----|
 |gustosx-live-0.7.0.iso|0.7.0|32 bits|21/10/2026|[Baixar](https://github.com/CleversonSA/gustosx/blob/main/dist/gustosx-live-0.7.0.iso)
-|gustosx-live-0.6.4.iso|0.6.4|32 bits|07/10/2026|[Baixar](https://github.com/CleversonSA/gustosx/blob/main/dist/gustosx-live-0.6.4.iso)|
 
 
 ### Partição 2 - EFI
