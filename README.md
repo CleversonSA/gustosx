@@ -40,9 +40,9 @@ Por isso, não utilize dados sensíveis e críticos nessa distribuição, para s
 
 ## Preparando o pendrive completo
 
-- 1. Baixe a última versão da imagem disponível: [live-gustosx-pendrive-052026.img](https://drive.google.com/file/d/1-pYJ5grBfbdWLAesO51pAhxDK8NwOCv8/view?usp=drive_link)
+- 1. Baixe a última versão da imagem disponível: [live-gustosx-pendrive-102026.img.zip](https://drive.google.com/file/d/1rfqLF5EmGHl7w2EsDYtFesJ4YKcGdkeK/view?usp=drive_link)
 
-- 2. Inicie o seu programa gravador de USB, selecione a imagem e grave no pendrive
+- 2. Inicie o seu programa gravador de USB, selecione a imagem e grave no pendrive. (Obs: a imagem está compactada em arquivo .zip, se o seeu programa gravador não o reconhece, extraia o conteúdo do arquivo em uma pasta primeiro!)
 
 - 3. Reinicie a máquina e faça boot pelo pendrive
 
